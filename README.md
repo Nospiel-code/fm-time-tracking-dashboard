@@ -26,6 +26,9 @@ Users should be able to:
 - Switch between viewing Daily, Weekly, and Monthly stats
 
 ### Screenshot
+![image](https://github.com/Nospiel-code/fm-time-tracking-dashboard/assets/130290610/197ed6f7-6db9-4dd9-a580-c5f04ab12ad2)
+![image](https://github.com/Nospiel-code/fm-time-tracking-dashboard/assets/130290610/8a170d39-6f26-4837-a4a5-15f118fa9ca4)
+![image](https://github.com/Nospiel-code/fm-time-tracking-dashboard/assets/130290610/0fd59fd2-e0d7-4b0d-9720-adc831a4d93e)
 
 
 ### Links
