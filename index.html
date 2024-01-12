@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/main.css">
+
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 60%);
+    }
+  </style>
+</head>
+
+<body class="bg-secondary900 text-white flex flex-col h-screen p-4">
+
+  <div class="grid my-auto mx-auto flex-wrap gap-4 justify-center sm:grid-cols-3 md:grid-cols-4 md:max-w-[50rem]">
+    <!-- Avatar -->
+    <div class="rounded-xl bg-secondary700 flex flex-col justify-between sm:row-span-3 md:row-span-2">
+      <!-- Avatar top -->
+      <div class="rounded-xl bg-primaryBlue flex justify-center items-center py-6 gap-4 px-6 sm:flex-col sm:items-start sm:pb-12">
+        <img class="max-w-[4rem] border-4 border-white rounded-full" src="./images/image-jeremy.png"
+          alt="Profile Picture Jeremy">
+        <h1 class="text-xl font-thin sm:text-3xl">
+          <span class="text-base text-secondary200 sm:text-[.7rem]">Report for</span><br>
+          Jeremy Robson
+        </h1>
+      </div>
+      <!-- Avatar bottom -->
+      <div class="flex justify-around py-5 px-2 sm:flex-col sm:items-start sm:pl-4 sm:gap-2">
+        <button
+          id="daily"
+          autofocus
+          class="text-secondary400 active:text-white hover:text-white transition ease-in-out delay-100 focus:text-white focus:outline-none">Daily</button>
+        <button
+          id="weekly"
+          class="text-secondary400 active:text-white hover:text-white transition ease-in-out delay-100 focus:text-white focus:outline-none">Weekly</button>
+        <button
+          id="monthly"
+          class="text-secondary400 active:text-white hover:text-white transition ease-in-out delay-100 focus:text-white focus:outline-none">Monthly</button>
+      </div>
+   
+    </div>
+
+    <!-- Time cards -->
+
+      <!-- Work card -->
+      <div class="rounded-xl bg-primaryOrange pt-8 relative overflow-hidden">
+        <img class="absolute right-4 -top-2" src="./images/icon-work.svg" aria-hidden="true">
+        <!-- Time card bottom-->
+        <div class="relative h-full bg-secondary700 rounded-xl p-4 cursor-pointer hover:bg-secondary500">
+          <!-- Title -->
+          <div class="flex justify-between">
+            <h2>Work</h2>
+            <button aria-label="interactive button">
+              <svg aria-hidden="true" class="fill-[#BBC0FF] active:fill-white hover:fill-white transition ease-in-out"
+                width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          <!-- Hours -->
+          <div class="flex justify-between items-center md:flex-col md:items-start">
+            <!-- Current -->
+            <p id="current-0" class="text-2xl font-light md:text-[2.7rem] md:pt-6 md:pb-4"><!-- daily --></p>
+            <!-- Previous -->
+            <p id="previous-0" class="text-xs text-secondary200">Previous - 7hrs <!-- daily --></p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Play card -->
+      <div class="rounded-xl bg-primarySoftBlue pt-8 relative overflow-hidden">
+        <img class="absolute right-4 -top-2" src="./images/icon-play.svg" aria-hidden="true">
+        <!-- Time card bottom-->
+        <div class="relative h-full bg-secondary700 rounded-xl p-4 cursor-pointer hover:bg-secondary500">
+          <!-- Title -->
+          <div class="flex justify-between">
+            <h2>Play</h2>
+            <button aria-label="interactive button">
+              <svg aria-hidden="true" class="fill-[#BBC0FF] active:fill-white hover:fill-white transition ease-in-out"
+                width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          <!-- Hours -->
+          <div class="flex justify-between items-center md:flex-col md:items-start">
+            <!-- Current -->
+            <p id="current-1" class="text-2xl font-light md:text-[2.7rem] md:pt-6 md:pb-4">1hr <!-- daily --></p>
+            <!-- Previous -->
+            <p id="previous-1" class="text-xs text-secondary200">Previous - 2hrs <!-- daily --></p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Study card -->
+      <div class="rounded-xl bg-primaryLightRed pt-8 relative overflow-hidden">
+        <img class="absolute right-4 -top-2" src="./images/icon-study.svg" aria-hidden="true">
+        <!-- Time card bottom-->
+        <div class="relative h-full bg-secondary700 rounded-xl p-4 cursor-pointer hover:bg-secondary500">
+          <!-- Title -->
+          <div class="flex justify-between">
+            <h2>Study</h2>
+            <button aria-label="interactive button">
+              <svg aria-hidden="true" class="fill-[#BBC0FF] active:fill-white hover:fill-white transition ease-in-out"
+                width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          <!-- Hours -->
+          <div class="flex justify-between items-center md:flex-col md:items-start">
+            <!-- Current -->
+            <p id="current-2" class="text-2xl font-light md:text-[2.7rem] md:pt-6 md:pb-4">0hrs <!-- daily --></p>
+            <!-- Previous -->
+            <p id="previous-2" class="text-xs text-secondary200">Previous - 1hr <!-- daily --></p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Exercise card -->
+      <div class="rounded-xl bg-primaryLimeGreen pt-8 relative overflow-hidden">
+        <img class="absolute right-4 -top-2" src="./images/icon-exercise.svg" aria-hidden="true">
+        <!-- Time card bottom-->
+        <div class="relative h-full bg-secondary700 rounded-xl p-4 cursor-pointer hover:bg-secondary500">
+          <!-- Title -->
+          <div class="flex justify-between">
+            <h2>Exercise</h2>
+            <button aria-label="interactive button">
+              <svg aria-hidden="true" class="fill-[#BBC0FF] active:fill-white hover:fill-white transition ease-in-out"
+                width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          <!-- Hours -->
+          <div class="flex justify-between items-center md:flex-col md:items-start">
+            <!-- Current -->
+            <p id="current-3" class="text-2xl font-light md:text-[2.7rem] md:pt-6 md:pb-4">1hr <!-- daily --></p>
+            <!-- Previous -->
+            <p id="previous-3" class="text-xs text-secondary200">Previous - 1hr <!-- daily --></p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Social card -->
+      <div class="rounded-xl bg-primaryViolet pt-8 relative overflow-hidden">
+        <img class="absolute right-4 -top-2" src="./images/icon-social.svg" aria-hidden="true">
+        <!-- Time card bottom-->
+        <div class="relative h-full bg-secondary700 rounded-xl p-4 cursor-pointer hover:bg-secondary500">
+          <!-- Title -->
+          <div class="flex justify-between">
+            <h2>Social</h2>
+            <button aria-label="interactive button">
+              <svg aria-hidden="true" class="fill-[#BBC0FF] active:fill-white hover:fill-white transition ease-in-out"
+                width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          <!-- Hours -->
+          <div class="flex justify-between items-center  md:flex-col md:items-start">
+            <!-- Current -->
+            <p id="current-4" class="text-2xl font-light md:text-[2.7rem] md:pt-6 md:pb-4">1hr <!-- daily --></p>
+            <!-- Previous -->
+            <p id="previous-4" class="text-xs text-secondary200">Previous - 3hrs <!-- daily --></p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Self Care card-->
+      <div class="rounded-xl bg-primarySoftOrange pt-8 relative overflow-hidden">
+        <img class="absolute right-4 -top-2" src="./images/icon-self-care.svg" aria-hidden="true">
+        <!-- Time card bottom-->
+        <div class="relative h-full bg-secondary700 rounded-xl p-4 cursor-pointer hover:bg-secondary500">
+          <!-- Title -->
+          <div class="flex justify-between">
+            <h2>Self Care</h2>
+            <button aria-label="interactive button">
+              <svg aria-hidden="true" class="fill-[#BBC0FF] active:fill-white hover:fill-white transition ease-in-out"
+                width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          <!-- Hours -->
+          <div class="flex justify-between items-center md:flex-col md:items-start">
+            <!-- Current -->
+            <p id="current-5" class="text-2xl font-light md:text-[2.7rem] md:pt-6 md:pb-4">1hr <!-- daily --></p>
+            <!-- Previous -->
+            <p id="previous-5" class="text-xs text-secondary200">Previous - 2hrs <!-- daily --></p>
+          </div>
+        </div>
+
+
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+
+  <div class="absolute attribution bottom-0 left-[50%] translate-x-[-50%] -z-10">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://twitter.com/tomsdev4">Thomas Schütz</a>.
+  </div>
+</body>
+
+</html>
